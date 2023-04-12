@@ -42,13 +42,13 @@ public class Main {
     public static void task3() {
         System.out.println("Задача 3");
         int population = 12_000_000;
-        int birthRate = 17 * (population / 1000);
-        int deathRate = 8 * (population / 1000);
+        double birthRate = 17;
+        double deathRate = 8;
         int years = 0;
 
         while (years < 10) {
             years++;
-            population += birthRate - deathRate;
+            population += population / 1000 * (birthRate - deathRate);
             System.out.println("Год " + years + " численность населения составляет " + population);
         }
     }
@@ -68,7 +68,7 @@ public class Main {
     }
 
     public static void task5() {
-        System.out.println("Задача 4");
+        System.out.println("Задача 5");
         int goal = 12_000_000;
         int total = 15000;
         double percent = 0.07;
@@ -105,8 +105,8 @@ public class Main {
         int days = 31;
 
         while (fridayDay <= days) {
-            fridayDay += 7;
             System.out.println("Сегодня пятница, " + fridayDay + "-е число. Необходимо подготовить отчет");
+            fridayDay += 7;
         }
     }
 
@@ -118,7 +118,7 @@ public class Main {
         int endYear = currentYear + 100;
         int year = 0;
 
-        while (year < 2200) {
+        while (year < endYear) {
             year += cometCycle;
             if (year > startYear && year < endYear) {
                 System.out.println(year);
